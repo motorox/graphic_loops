@@ -1,10 +1,11 @@
 use std::io;
 use std::ops::Range;
+use graphic_loops::factorial;
 
 fn main() {
     println!("Hello, world!");
     let rows:i32 = 10; //read_data();
-    println!("Factorial({}) = {}", rows, factorial(rows));
+    println!("Factorial({}) = {}", rows, graphic_loops::factorial(rows));
     for i in 0 .. rows+1 {
         let mut c = 0;
         while c <= ( rows - i - 2 ){
@@ -29,19 +30,3 @@ fn main() {
 //    };
 //    Option(guess)
 //}
-
-fn factorial (n:i32) -> u64 {
-    let mut c = 1;
-    let mut res:u64 = 1;
-    while c <= n {
-        res = res * c as u64;
-        c +=1;
-    }
-    res
-}
-
-#[test]
-fn test_factorial() {
-    let fact = factorial(10);
-    assert_eq!(fact, 3628800);
-}
